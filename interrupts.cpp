@@ -37,7 +37,7 @@ int main(int argc, char** argv) {
             execution += std::to_string(current_time) + ", " + std::to_string(duration_intr) + ", CPU burst\n";
             current_time += duration_intr;
         } else if (activity == "SYSCALL") {
-            auto [log_str, updated_time] = intr_boilerplate(current_time, duration_intr, 20, vectors);
+            auto [log_str, updated_time] = intr_boilerplate(current_time, duration_intr, 30, vectors);
             execution += log_str;
             current_time = updated_time;
 
@@ -45,7 +45,7 @@ int main(int argc, char** argv) {
             current_time += 40;
         } else if (activity == "END_IO") {
 
-            auto [log_str, updated_time] = intr_boilerplate(current_time, duration_intr, 20, vectors);
+            auto [log_str, updated_time] = intr_boilerplate(current_time, duration_intr, 30, vectors);
             execution += log_str;
             current_time = updated_time;
             
