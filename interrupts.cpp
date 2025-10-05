@@ -11,6 +11,7 @@
 #include <vector>
 
 long long current_time = 0;
+const int context_time = 10;
 std::map<int, std::string> vector_table;
 std::map<int, int> device_table;
 std::ifstream trace_file("trace.txt");
@@ -38,7 +39,7 @@ int main(int argc, char** argv) {
             current_time += duration_intr;
         } 
         else if (activity == "SYSCALL") {
-            auto [log_str, updated_time] = intr_boilerplate(current_time, duration_intr, 10, vectors);
+            auto [log_str, updated_time] = intr_boilerplate(current_time, duration_intr, context_time, vectors);
             execution += log_str;
             current_time = updated_time;
 
@@ -50,7 +51,7 @@ int main(int argc, char** argv) {
         }
         else if (activity == "END_IO") {
 
-            auto [log_str, updated_time] = intr_boilerplate(current_time, duration_intr, 10, vectors);
+            auto [log_str, updated_time] = intr_boilerplate(current_time, duration_intr, context_time, vectors);
             execution += log_str;
             current_time = updated_time;
             
