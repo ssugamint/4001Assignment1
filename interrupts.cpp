@@ -29,8 +29,8 @@ int main(int argc, char** argv) {
     std::string trace;
     std::string execution;
 
-    int context_time = 20;    
-    int isr_time = 40;        // ISR execution time, values will change from 40–200
+    int context_time = 30;    
+    int isr_time = 150;        // ISR execution time, values will change from 40–200
     int switch_time = 1;      // switch form kernel/user mode 
     int iret_time = 1;        // IRET instruction time
 

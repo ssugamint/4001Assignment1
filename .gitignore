@@ -1,0 +1,4 @@
+/bin/
+*.dSYM/
+/execution.txt
+.DS_Store
